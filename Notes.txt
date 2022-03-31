@@ -1,0 +1,12 @@
+Options
+-design[rd|ss|vb]
+
+The XML schema design type to use for the generated schema.
+rd — Use russian doll design; local elements and local types.
+ss — Use salami slice design; global elements and local types.
+vb(default) — Use venetian blind design; local elements and global complex types.
+
+------------------------------------------------------------------------------------------------
+.\Tool\xmlbeans-5.0.3\bin\inst2xsd -design ss -enumerations never .\source_xml\cd_catalog.xml -outDir .\generated_xml -outPrefix cd_catalog_ss
+
+C:\Java\jdk1.8.0_202\bin\xjc -d .\src -p org.dragon.yunpeng.generated.xjc2  .\generated_xml\cd_catalog_ss0.xsd
