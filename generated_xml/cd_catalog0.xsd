@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="CATALOG" type="CATALOGType"/>
+  <xs:complexType name="CDType">
+    <xs:sequence>
+      <xs:element type="xs:string" name="TITLE"/>
+      <xs:element type="xs:string" name="ARTIST"/>
+      <xs:element name="COUNTRY">
+        <xs:simpleType>
+          <xs:restriction base="xs:string">
+            <xs:enumeration value="USA"/>
+            <xs:enumeration value="UK"/>
+            <xs:enumeration value="EU"/>
+            <xs:enumeration value="Norway"/>
+          </xs:restriction>
+        </xs:simpleType>
+      </xs:element>
+      <xs:element type="xs:string" name="COMPANY"/>
+      <xs:element type="xs:float" name="PRICE"/>
+      <xs:element type="xs:short" name="YEAR"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="CATALOGType">
+    <xs:sequence>
+      <xs:element type="CDType" name="CD" maxOccurs="unbounded" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
